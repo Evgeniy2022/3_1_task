@@ -50,9 +50,7 @@ body{
 	padding: 0 5px;
 	margin: 0 auto;
 }
-.menu__items{
-	display: none;
-}
+
 .header-block{
 	display: flex;
 	align-items: center;
@@ -62,7 +60,7 @@ body{
 	height: 88px;
 	padding: 24px 16px;
 }
-.menu-logo{
+.logo{
 	padding: 0 0 0 6px;
 	width: 96.5px;
 	height: 50.8px;
@@ -71,19 +69,60 @@ body{
 	display: flex;
 	align-items: center;
 }
-.service{
+.service__block{
 	display: flex;
 	align-items: center;
 }
-.service__service{
+
+.service__call,
+.service__chat,
+.service__profile{
+	display: none;
+}
+.service__call:hover,
+.service__chat:hover,
+.service__profile:hover,
+.service__service:hover,
+.service__search:hover,
+.burger__img:hover{
+	transition: 0.3s;
+}
+.service__call:hover,
+.service__chat:hover,
+.service__profile:hover,
+.service__service:hover,
+.service__search:hover,
+.burger__img:hover{
+	opacity: 0.8;
+	transition: 0.3s;
+}
+
+.service__link:not(:last-child){
 	padding: 0 16px 0 0;
+}
+
+.service__before{
+position: relative;
+
+}
+.service__before::before{
+	content: '';
+	position: absolute;
+	top: 5px;
+	left: -20px;
+   width: 2px;
+   height: 32px;
+   background: #EAEAEA;
+
 }
 
 .main__sizes{
 	margin: 24px 0 5px 0;
 }
 
-
+.reviews{
+	display: none;
+}
 .services__sizes{
 	padding: 0 0 0px 5px;
 }
@@ -113,7 +152,7 @@ body{
 	font-size: 16px;
 	line-height: 1.5;
 	color: #7E7E82;
-	padding: 8px 9px;
+	padding: 8px 20px;
 	display: block;
 	white-space: nowrap;
 }
@@ -121,18 +160,20 @@ body{
 .services-block__link:focus{
 	border: 2px solid #B8FFEC;
 	border-radius: 6px;
-	padding: 6px 7px;
+	padding: 6px 18px;
 }
 .service__description{
 	display: none;
 }
-.description_sizes{
-	padding: 0 16px;
-}
+
 .services-block__text:nth-child(2){
 	display: none;
 }
+.services-block__hide{
+	display: none;
+}
 .services-block__text{
+	letter-spacing: 0.2px;
 	line-height: 1.29;
 	margin-bottom: 14px;
 	font-size: 14px;
@@ -161,6 +202,9 @@ body{
 	color: #7E7E82;
 	transition: 0.3s;
 }
+.description-block_sizes{
+	padding: 0 0 0 16px;
+}
 .description-block__img{
 	max-width: 320px;
 	
@@ -169,15 +213,15 @@ body{
 
 @media (min-width: 768px) { 
 	.container{
-		max-width: 778px;
-		padding: 0 5px;
+		max-width: 788px;
+		padding: 0 10px;
 		margin: 0 auto;
 	}
 	.header__sizes{
-		padding: 24px 24px;
+		padding: 24px 0 24px 24px;
 	}
 
-	.menu__link::after{
+	.burger__link::after{
 		position: absolute;
 		content: '';
 		width: 2px;
@@ -186,10 +230,27 @@ body{
 		margin-left: 20px;
 		transform: translateY(5px);
 	}
-	.menu-logo{
+	.logo{
 		padding: 0 0 0 43px;
 	}
-	.description-block{
+	.service__call,
+	.service__chat,
+	.service__profile{
+		display: inline-block;
+	}
+	.service__link:nth-child(3){
+		padding-right: 42px;
+	}
+	.services-block__text:nth-child(2){
+		display: block;
+	}
+	.description-block_sizes{
+		padding: 0 0 0 24px;
+	}
+	.services-block__hide{
+		display: none;
+	}
+	.description{
 		display: flex;
 		justify-content: space-between;
 	}
@@ -225,23 +286,51 @@ body{
 		justify-content: end;
 	}
 	.header__sizes{
-		transform: translateY(20px);
+		padding: 0;
+		transform: translateY(11px);
 	}
 	.menu{
 		display: none;
 	}
-
+	.service__before{
+		display: none;
+	}
 	.services-block__text:nth-child(2){
 		display: block;
+	}
+	.service__call,
+	.service__chat,
+	.service__profile{
+		display:none;
+	}
+	.services-block__hide{
+		display: inline;
 	}
 	.main__sizes{    
 		
 		margin: 24px 0 15px 0;
 	}
+	.reviews{
+		display: block;
+	}
+	.reviews__block{
+		margin: 0 0 20px 56px;
+	}
+	.reviews__link{
+		font-size: 16px;
+		line-height: 1.5;
+		letter-spacing: 0.2px;
+		color: rgba(126, 126, 130, 1);
+		transition: 0.3s;
+
+	}
+	.reviews__link:hover{
+		opacity: 0.8;
+		transition: 0.3s;
+	}
 	.service__block{
 		display: flex;
 		align-items: center;
-		padding: 0 15px 0 0;
 	}
 	.service__description{
 		font-family: "TT Lakes Medium";
@@ -267,10 +356,10 @@ body{
 	margin-right: 30px;
 	}
 	.services__sizes{
-		padding: 0 25px 0px 25px;
+		padding: 0 0px 0px 25px;
 	}
-	.description_sizes{
-		padding: 0 34px;
+	.description-block_sizes{
+		padding: 0 0 0 34px;
 	}
 	.description-block__img{
 		max-width: 532px;
