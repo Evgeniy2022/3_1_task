@@ -21,9 +21,6 @@
     url("./fonts/TTLakes-Bold.eot") format("eot");
 }
 
-
-
-
 *{
 	padding: 0;
 	margin: 0;
@@ -42,7 +39,7 @@ body{
 	font-family: "TT Lakes Regular";
 	font-size: 14px;
 	color: #1B1C21;
-	background-color: #F8F8F8;
+	background-color: rgba(255, 255, 255, 1);
 }
 
 .container{
@@ -56,7 +53,7 @@ body{
 	align-items: center;
 	justify-content: space-between; 
 }
-.header__sizes{
+.header-block_sizes{
 	height: 88px;
 	padding: 24px 16px;
 }
@@ -113,17 +110,13 @@ position: relative;
    width: 2px;
    height: 32px;
    background: #EAEAEA;
-
 }
 
-.main__sizes{
+.services_sizes{
 	margin: 24px 0 5px 0;
 }
 
-.reviews{
-	display: none;
-}
-.services__sizes{
+.services-block_sizes{
 	padding: 0 0 0px 5px;
 }
 .services__title{
@@ -196,7 +189,7 @@ position: relative;
 .services-block__button{
 	font-family: "TT Lakes Medium";
 	border: none;
-	background-color: #fff;
+	background-color: inherit;
 }
 .services-block__button:hover{
 	color: #7E7E82;
@@ -210,14 +203,13 @@ position: relative;
 	
 }
 
-
 @media (min-width: 768px) { 
 	.container{
 		max-width: 788px;
 		padding: 0 10px;
 		margin: 0 auto;
 	}
-	.header__sizes{
+	.header-block_sizes{
 		padding: 24px 0 24px 24px;
 	}
 
@@ -262,7 +254,7 @@ position: relative;
 	content: '';
 	margin-right: 20px;
 	}
-	.services__sizes{
+	.services-block_sizes{
 		padding: 0 0 0px 15px;
 	}
 	.description_sizes{
@@ -285,7 +277,7 @@ position: relative;
 	.header-block{
 		justify-content: end;
 	}
-	.header__sizes{
+	.header-block_sizes{
 		padding: 0;
 		transform: translateY(11px);
 	}
@@ -306,27 +298,9 @@ position: relative;
 	.services-block__hide{
 		display: inline;
 	}
-	.main__sizes{    
+	.services_sizes{    
 		
 		margin: 24px 0 15px 0;
-	}
-	.reviews{
-		display: block;
-	}
-	.reviews__block{
-		margin: 0 0 20px 56px;
-	}
-	.reviews__link{
-		font-size: 16px;
-		line-height: 1.5;
-		letter-spacing: 0.2px;
-		color: rgba(126, 126, 130, 1);
-		transition: 0.3s;
-
-	}
-	.reviews__link:hover{
-		opacity: 0.8;
-		transition: 0.3s;
 	}
 	.service__block{
 		display: flex;
@@ -341,6 +315,8 @@ position: relative;
 	}
 	.services-block{
 		justify-content: space-between;
+		flex-wrap: wrap;
+		overflow-x: none;
 	}
 	.service__description:hover{
 		color: #7E7E82;
@@ -355,7 +331,7 @@ position: relative;
 	content: '';
 	margin-right: 30px;
 	}
-	.services__sizes{
+	.services-block_sizes{
 		padding: 0 0px 0px 25px;
 	}
 	.description-block_sizes{
